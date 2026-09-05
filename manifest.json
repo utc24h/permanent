@@ -1,0 +1,35 @@
+{
+  "_comment_en": "Where everything lives. For anyone who wants to walk the whole system without knowing it beforehand. The shape is NOT settled: practice corrects it.",
+  "_comment_es": "Donde vive cada cosa. Para quien quiera recorrer el sistema entero sin conocerlo de antes. La forma NO esta cerrada: la practica la corrige.",
+  "permanent": [
+    { "name": "GitHub", "url": "https://github.com/utc24h/permanent" },
+    { "name": "GitLab", "url": "https://gitlab.com/utc24h/permanent" }
+  ],
+  "_permanent_comment_en": "The repository that does not depend on the year: specification, key registry and verifier. It is the ROOT OF TRUST, so it is mirrored on every provider for the same reason as the anchors: losing one provider must not take away the ability to verify. The paths below are relative to any of these copies, and all of them hold the same content.",
+  "_permanent_comment_es": "El repositorio que no depende del año: especificacion, registro de claves y verificador. Es la RAIZ DE CONFIANZA, asi que esta replicado en todos los proveedores por el mismo motivo que los anclajes: perder un proveedor no puede quitar la capacidad de verificar. Las rutas de abajo son relativas a cualquiera de estas copias, y todas llevan el mismo contenido.",
+  "spec": "spec/",
+  "keys": "keys/history.json",
+  "verifier": "verifier/",
+  "anchors": [
+    { "name": "GitHub", "url": "https://github.com/utc24h/beacon-2026" },
+    { "name": "GitLab", "url": "https://gitlab.com/utc24h/beacon-2026" }
+  ],
+  "_anchors_comment_en": "Every emission is written to all of these. They are independent organizations on purpose: losing one does not lose the record. Each URL is written in full because the same organization name may not be available on every provider. The name is the PROVIDER, because that is what the reader is meant to check: different companies, none of them ours.",
+  "_anchors_comment_es": "Cada emision se escribe en todos estos. Son organizaciones independientes a proposito: perder uno no pierde el registro. Cada URL va entera porque el mismo nombre de organizacion puede no estar disponible en todos los proveedores. El nombre es el PROVEEDOR, porque eso es lo que el lector tiene que poder comprobar: empresas distintas, ninguna nuestra.",
+  "years": {
+    "_comment_en": "One repository per year. One is added each year, and none is ever removed.",
+    "_comment_es": "Un repositorio por año. Se agrega uno cada año, y no se elimina ninguno nunca."
+  },
+  "drand_chain": {
+    "_comment_en": "The randomness source. The chain hash travels inside every .jws, so a verifier does not have to take this file's word for which chain was used.",
+    "_comment_es": "La fuente de aleatoriedad. El hash de la cadena viaja dentro de cada .jws, asi que quien verifica no tiene que creerle a este archivo cual cadena se uso.",
+    "relays": [
+      "https://drand.cloudflare.com",
+      "https://api.drand.sh",
+      "https://api3.drand.sh",
+      "https://api2.drand.sh"
+    ],
+    "_relays_comment_en": "All four serve the same chain, and the emitter walks them in this order until one answers with a round that verifies. Order is by measured latency (2026-08-11), nothing else: with BLS verification every relay is equally safe, because the signature is checked against the group public key, which is held locally and does not travel through the channel being verified. A compromised relay can stay silent or return garbage, and both are detected. Anyone verifying may use whichever they prefer.",
+    "_relays_comment_es": "Los cuatro sirven la misma cadena, y el emisor los recorre en este orden hasta que uno conteste con una ronda que verifique. El orden es por latencia medida (2026-08-11) y nada mas: con verificacion BLS todos los relays son igual de seguros, porque la firma se comprueba contra la clave publica del grupo, que esta local y no viaja por el canal que se verifica. Un relay comprometido puede callarse o devolver basura, y las dos cosas se detectan. Quien verifique puede usar el que prefiera."
+  }
+}
