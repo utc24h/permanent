@@ -1,0 +1,12 @@
+# NOTHING TOUCHES THE BYTES IN THIS REPOSITORY.
+#
+# Without this line, Git for Windows applies core.autocrlf=true — the factory
+# default — and converts line endings on clone. A .jws with CRLF does NOT
+# verify: the signature is over bytes, and changing one byte breaks it.
+#
+# The result would be a silent failure, on the verifier's side, for an entire
+# operating system, without anyone having touched anything.
+#
+# It must be here from the FIRST commit: adding it later does not fix the
+# people who already cloned.
+* -text
