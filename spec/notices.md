@@ -54,7 +54,10 @@ published. It is the only one of the three written under pressure, so its form i
 small.
 
 It carries: the UTC instant, a `code` from the closed list below, what happened, what was done, and
-what a third party should check. Signed with the same key as everything else.
+what a third party should check. It is Markdown and **unsigned**, on purpose: a notice informs,
+it does not prove. If the key were in someone else's hands, signing "my key was stolen" with it
+would prove nothing — whoever holds it can sign the same. What backs it is where it lives:
+`permanent` is append-only and the commit date is set by the provider, not by us.
 
 ```
 key_compromised       a signing key is, or may be, in someone else's hands
@@ -87,6 +90,17 @@ Its shape:
 | `reason` | **an identifier, never prose** |
 | `reason_data` | the numbers behind the reason |
 | `opened_at_utc` | when it was opened |
+| `variant` | the affected variant, if the incident concerns only one. Absent = all of them |
+| `attempts` | what was tried and what each anchor answered, with timestamps |
+| `unanchored_commitment` | a commitment that was signed and **never anchored in time**. Published as audit evidence, not as a valid commitment |
+| `warning_en` | the warning that goes with it, inside the signed file itself |
+
+The last four appear only when they apply.
+
+⚠️ **`unanchored_commitment` is not a commitment.** It would arrive dated after its round, so it
+reads as arriving late — that is why it travels under a different field name and carries its own
+warning. There is no controversy when the label tells the truth; controversy starts when something
+is presented as what it is not.
 
 `reason` comes from a closed list so that anyone can render the sentence in any language, and so
 that we cannot bury a bad turn under a wording nobody compares:
