@@ -54,7 +54,10 @@ algo ya publicado. Es la única de las tres que se escribe bajo presión, así q
 propósito.
 
 Lleva: el instante UTC, un `code` de la lista cerrada de abajo, qué pasó, qué se hizo, y qué debería
-comprobar un tercero. Firmada con la misma clave que todo lo demás.
+comprobar un tercero. Va en Markdown y **sin firma**, a propósito: la nota informa, no prueba.
+Si la clave estuviera en manos ajenas, firmar con ella «me robaron la clave» no probaría nada —
+el que la tiene puede firmar lo mismo. Lo que la respalda es dónde vive: `permanent` es
+append-only y la fecha del commit la pone el proveedor, no nosotros.
 
 ```
 key_compromised       una clave de firma está, o puede estar, en manos ajenas
@@ -88,6 +91,17 @@ Su forma:
 | `reason` | **un identificador, nunca prosa** |
 | `reason_data` | los números detrás del motivo |
 | `opened_at_utc` | cuándo se abrió |
+| `variant` | la variante afectada, si el incidente es de una sola. Ausente = todas |
+| `attempts` | qué se intentó y qué contestó cada anclaje, con sus marcas de tiempo |
+| `unanchored_commitment` | el compromiso que se firmó y **nunca se ancló a tiempo**. Va como evidencia de auditoría, no como compromiso válido |
+| `warning_en` | la advertencia que acompaña al anterior, en inglés, dentro del propio archivo firmado |
+
+Los cuatro últimos solo aparecen cuando corresponden.
+
+⚠️ **`unanchored_commitment` no es un compromiso.** Llegaría con fecha posterior a su ronda, así que
+se lee como que llegamos tarde — y por eso viaja con su advertencia adentro y con otro nombre de
+campo. No hay controversia si la etiqueta dice la verdad; la controversia nace cuando algo se
+presenta como lo que no es.
 
 `reason` sale de una lista cerrada para que cualquiera pueda armar la frase en cualquier idioma, y
 para que no podamos tapar un turno malo con una redacción que nadie compara:
