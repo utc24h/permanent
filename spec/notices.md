@@ -4,7 +4,7 @@
 
 **This system is a constitution that regulates itself.**
 
-Nobody can know today what will need changing in 2031. What can be done is to write down, in
+Nobody can know today what will need changing, or when. What can be done is to write down, in
 advance and in public, **how it changes without breaking trust** — and to be bound by that.
 
 It is the same reason the **RFCs** exist: a protocol meant to last decades does not rest on the good
@@ -108,6 +108,8 @@ that we cannot bury a bad turn under a wording nobody compares:
 ```
 anchor_timeout        the write went out and we did not see the answer
 anchor_unreachable    no repository accepted the write
+anchor_partial        it reached one anchor and not the other
+anchor_retried        it reached every anchor, but retrying was needed
 anchor_too_late       the commitment landed after its round already existed
 beacon_unreachable    the drand round could not be read within the window
 beacon_invalid        a relay answered something that does not verify
