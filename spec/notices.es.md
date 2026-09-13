@@ -4,8 +4,8 @@
 
 **Este sistema es una constitución que se autorregula.**
 
-Nadie puede saber hoy qué va a hacer falta cambiar en 2031. Lo que sí se puede es dejar escrito, de
-antemano y por adelantado, **cómo se cambia sin romper la confianza** — y quedar atado a eso.
+Nadie puede saber hoy qué va a hacer falta cambiar, ni cuándo. Lo que sí se puede es dejar escrito,
+de antemano y por adelantado, **cómo se cambia sin romper la confianza** — y quedar atado a eso.
 
 Es el mismo motivo por el que existen los **RFC**: un protocolo que va a durar décadas no se
 sostiene sobre la buena voluntad de quien lo mantiene, sino sobre un procedimiento público que
@@ -109,6 +109,8 @@ para que no podamos tapar un turno malo con una redacción que nadie compara:
 ```
 anchor_timeout        la escritura salió y no vimos la respuesta
 anchor_unreachable    ningún repositorio aceptó la escritura
+anchor_partial        entró en un anclaje y no en el otro
+anchor_retried        entró en todos, pero hizo falta reintentar
 anchor_too_late       el compromiso llegó cuando su ronda ya existía
 beacon_unreachable    no se pudo leer la ronda de drand dentro del plazo
 beacon_invalid        un relay contestó algo que no verifica
