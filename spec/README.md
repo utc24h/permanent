@@ -1,5 +1,9 @@
 # `spec/` — the published specification
 
+This specification defines how to produce and check results that are **verifiably random and
+auditable**: the numbers can be reproduced by anyone from the published file, and the record of what
+was published is anchored append-only at two unrelated providers, timestamped by them.
+
 What is needed for **anyone** to reproduce the numbers without our code:
 
 1. The inputs: `seed`, `round.randomness`, `drand_round`
