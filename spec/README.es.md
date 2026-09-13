@@ -1,5 +1,10 @@
 # `spec/` — la especificación publicada
 
+Esta especificación define cómo producir y comprobar resultados **verificables y auditables**
+—*verifiably random and auditable*—: cualquiera puede reproducir los números desde el archivo
+publicado, y el registro de lo publicado queda anclado *append-only* en dos proveedores sin relación
+entre sí, con la fecha puesta por ellos.
+
 Lo que hace falta para que **cualquiera** reproduzca los números sin nuestro código:
 
 1. Los insumos: `seed`, `round.randomness`, `drand_round`
