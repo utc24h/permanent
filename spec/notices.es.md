@@ -17,7 +17,7 @@ preguntarnos nada.
 
 ---
 
-Tres instrumentos firmados, y no son intercambiables. Cada uno contesta una pregunta distinta, y
+Tres instrumentos, y no son intercambiables. Cada uno contesta una pregunta distinta, y
 saber cuál corresponde es lo que te permite darte cuenta si nos lo salteamos.
 
 > 🇬🇧 In English: [`notices.md`](notices.md)

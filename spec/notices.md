@@ -17,7 +17,7 @@ by looking at dates, without asking us anything.
 
 ---
 
-Three signed instruments, and they are not interchangeable. Each answers a different question, and
+Three instruments, and they are not interchangeable. Each answers a different question, and
 knowing which one to expect is what lets you catch us skipping it.
 
 > 🇪🇸 En espanol: [`notices.es.md`](notices.es.md)
